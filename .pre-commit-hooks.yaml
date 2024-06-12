@@ -1,0 +1,5 @@
+- id: pg-formatter
+  name: "pgFormatter"
+  entry: pg_format
+  files: "^.*\\.sql$"
+  language: python
