@@ -5,7 +5,8 @@ from os import path
 
 
 def pg_format(
-    sql: bytes, unquote: bool = False,
+    sql: bytes,
+    unquote: bool = False,
 ):
     if unquote:
         sql = unquote_sql(sql)
