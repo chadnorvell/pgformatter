@@ -1,4 +1,4 @@
-__version__ = "0.1.6"
+__version__ = "5.5"
 
 from .pg_format import pg_format
 

@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "pgformatter"
-version = "0.1.6"
+version = "5.5"
 description = "Thin Python wrapper for pgFormatter"
-authors = ["Nathan Cahill <nathan@nathancahill.com>"]
+authors = [
+    "Nathan Cahill <nathan@nathancahill.com>",
+    "Chad Norvell <chad@constructural.ai>"
+]
 include = ["perl/**/*"]
 
 [tool.poetry.dependencies]
