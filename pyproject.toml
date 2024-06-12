@@ -8,7 +8,11 @@ authors = [
 ]
 include = ["perl/**/*"]
 
+[tool.poetry.scripts]
+pg_format = "pgformatter.cli:main"
+
 [tool.poetry.dependencies]
+colorama = "^0.4.6"
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]

@@ -2,10 +2,13 @@ import sys
 import re
 import subprocess
 from os import path
+from pathlib import Path
+from typing import Optional
 
 
 def pg_format(
     sql: bytes,
+    config_path: Optional[Path] = None,
     unquote: bool = False,
 ):
     if unquote:
@@ -15,6 +18,9 @@ def pg_format(
     binary = path.join(perl, "pg_format")
     incl = path.join(perl, "lib", "autodie")
     cmd = ["perl", "-I", incl, binary]
+
+    if config_path is not None:
+        cmd += ["-c", str(config_path)]
 
     output = ""
 
@@ -38,7 +44,7 @@ def replace_if_not_reserved(match):
 
 
 def unquote_sql(sql: bytes):
-    return re.sub(b'("(\w+)")', replace_if_not_reserved, sql)
+    return re.sub(b'("(\\w+)")', replace_if_not_reserved, sql)
 
 
 reserved = set(
